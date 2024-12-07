@@ -1,11 +1,15 @@
 CREATE TABLE measures (
   id SERIAL PRIMARY KEY,
-  measure_id UUID DEFAULT gen_random_uuid(),
-  measure_num NUMERIC,
   date DATE,
   time TIME,
-  dias NUMERIC,
-  sys NUMERIC,
-  pulse NUMERIC,
+  dia1 NUMERIC,
+  sys1 NUMERIC,
+  pulse1 NUMERIC,
+  dia2 NUMERIC,
+  sys2 NUMERIC,
+  pulse2 NUMERIC,
+  dia3 NUMERIC,
+  sys3 NUMERIC,
+  pulse3 NUMERIC,
   arm VARCHAR(255)
 );
