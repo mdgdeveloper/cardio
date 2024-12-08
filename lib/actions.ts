@@ -1,4 +1,5 @@
 "use server";
+import { redirect } from 'next/navigation'
 import { query } from "@/lib/db";
 // Server Actions
 
@@ -34,6 +35,10 @@ export const addMeasure = async (formData: FormData) => {
 
     const result = await query(SQLQUERY, [date1, time1, dia1, sys1, pulse1, dia2, sys2, pulse2, dia3, sys3, pulse3])
 
-    console.log(result)
+    // Move to the main page using NextJs
+    redirect('/')
+
+    // Return the result
+    return result
 
 }
