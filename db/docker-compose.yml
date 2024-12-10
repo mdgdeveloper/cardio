@@ -3,8 +3,10 @@ services:
     image: postgres
     environment:
       POSTGRES_DB: measures
-      POSTGRES_USER: admin 
+      POSTGRES_USER: admin
       POSTGRES_PASSWORD: MDGcontra2021
+      PGTZ: Europe/Madrid # Hint for clients
+      TZ: Europe/Madrid
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -13,4 +15,5 @@ services:
 
 volumes:
   postgres_data:
+
 

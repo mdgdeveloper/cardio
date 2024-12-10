@@ -25,3 +25,15 @@ export const normalizeDate = (currentDate: string): string => {
     // Format as DD/MM/YYYY 
     return `${day}/${month}/${year}`;
 }
+
+
+export const getColor = (dia: number, sys: number): string => {
+    // Function to return bg color in Tailwindcss: 
+    // If diastolic and systolic values are considered normal, green, otherwise yellow or red
+    if (dia < 80 && sys < 120) return 'bg-green-500'
+    if (dia < 90 && sys < 130) return 'bg-green-300'
+    if (dia < 100 && sys < 140) return 'bg-yellow-500'
+    if (dia < 120 && sys < 180) return 'bg-orange-500'
+    return 'bg-red-500'
+
+}
